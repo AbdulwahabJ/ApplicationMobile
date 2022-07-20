@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "538430922790",
+    "project_id": "messagemy-app-14905",
+    "storage_bucket": "messagemy-app-14905.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:538430922790:android:2e62d91099d5a71b94c6e7",
+        "android_client_info": {
+          "package_name": "com.aldebbiat.message_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "538430922790-k6imlhpvu7och9qjhkssc5hqd4gphqf4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCia46Xl4L-zHTwNViv0AvZxXBn3lE0Kk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "538430922790-k6imlhpvu7och9qjhkssc5hqd4gphqf4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

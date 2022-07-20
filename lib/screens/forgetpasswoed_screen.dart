@@ -26,7 +26,6 @@ class ForgetPasswordScreen extends StatelessWidget {
             children: [
               //
               BackIcon(),
-
               //
               SizedBox(
                 height: 80,
@@ -45,7 +44,6 @@ class ForgetPasswordScreen extends StatelessWidget {
                 ),
               ),
               //
-
               Padding(
                 padding: const EdgeInsets.all(15.0),
                 child: Text(

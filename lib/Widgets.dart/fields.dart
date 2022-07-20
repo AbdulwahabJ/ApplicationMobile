@@ -50,7 +50,6 @@ class BottomBorderfield extends StatelessWidget {
                   obscureText: true, // for hide the password..
                   style: TextStyle(color: Colors.white),
                   cursorColor: Colors.white,
-
                   decoration: const InputDecoration(
                     contentPadding: EdgeInsets.symmetric(
                       vertical: 10,
