@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
@@ -10,9 +11,10 @@ import '../Widgets.dart/fields.dart';
 import '../Widgets.dart/texts.dart';
 
 class SignUpScreen extends StatelessWidget {
-      static const screenRoute = '/signup_screen';
+  static const screenRoute = '/signup_screen';
+  final _auth = FirebaseAuth.instance;
 
-  const SignUpScreen({Key? key}) : super(key: key);
+  SignUpScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +48,11 @@ class SignUpScreen extends StatelessWidget {
             SizedBox(
               height: 60,
             ),
-            Center(child: Button(buttonText: 'تسجيل')),
+            Center(
+                child: Button(
+              buttonText: 'تسجيل',
+              onPressed: () {},
+            )),
           ],
         ),
       ),

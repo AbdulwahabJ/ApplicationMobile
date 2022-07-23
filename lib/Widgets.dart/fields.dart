@@ -1,15 +1,15 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, dead_code
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, dead_code, use_key_in_widget_constructors, must_be_immutable
 
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import '../Widgets.dart/app_icons.dart';
 
-class BottomBorderfield extends StatelessWidget {
-  const BottomBorderfield({
-    Key? key,
-  }) : super(key: key);
+late String name;
+late String email;
+late String password;
 
+class BottomBorderfield extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -42,6 +42,9 @@ class BottomBorderfield extends StatelessWidget {
                       fontFamily: 'cairo',
                     ),
                   ),
+                  onChanged: (value) {
+                    email = value;
+                  },
                 ),
                 SizedBox(
                   height: 30,
@@ -68,6 +71,9 @@ class BottomBorderfield extends StatelessWidget {
                       fontFamily: 'cairo',
                     ),
                   ),
+                  onChanged: (value) {
+                    password = value;
+                  },
                 ),
               ],
             ),
@@ -132,6 +138,9 @@ class BorderField extends StatelessWidget {
               //
               hintText: fieldHint,
             ),
+            onChanged: (value) {
+              email = value;
+            },
           ),
         ),
       ],

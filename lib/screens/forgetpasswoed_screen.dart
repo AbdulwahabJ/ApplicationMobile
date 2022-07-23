@@ -66,7 +66,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                 height: 80,
               ),
               //
-              Center(child: Button(buttonText: 'ارسال')),
+              Center(child: Button(buttonText: 'ارسال', onPressed: () {  },)),
             ],
           ),
         ),

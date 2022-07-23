@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, implementation_imports, unnecessary_import
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,7 @@ import '../Widgets.dart/fields.dart';
 class SignInScreen extends StatelessWidget {
   static const screenRoute = '/signin_screen';
 
-  const SignInScreen({Key? key}) : super(key: key);
+  SignInScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +56,10 @@ class SignInScreen extends StatelessWidget {
                 height: 40,
               ),
               //..
-              Button(buttonText: 'تسجيل الدخول'),
+              Button(
+                buttonText: 'تسجيل الدخول',
+                onPressed: () {},
+              ),
               NewAccountText(text: 'حساب جديد'),
             ],
           ),

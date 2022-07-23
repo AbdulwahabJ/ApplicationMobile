@@ -1,10 +1,14 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import './fields.dart';
 
 class Button extends StatelessWidget {
   final String buttonText;
-  const Button({Key? key, required this.buttonText}) : super(key: key);
+  final Function onPressed;
+
+  const Button({Key? key, required this.buttonText, required this.onPressed})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +26,7 @@ class Button extends StatelessWidget {
           fontWeight: FontWeight.bold,
         ),
       ),
-      onPressed: () {
-        // Respond to button press
-      },
+      onPressed: () => onPressed,
       child: Text(
         buttonText,
       ),

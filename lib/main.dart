@@ -3,11 +3,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:my_report/screens/sign_in_screen.dart';
-
 import 'screens/forgetpasswoed_screen.dart';
 import 'screens/sign_up_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
