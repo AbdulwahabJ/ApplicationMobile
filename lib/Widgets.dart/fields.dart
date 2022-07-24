@@ -5,11 +5,9 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import '../Widgets.dart/app_icons.dart';
 
-late String name;
-late String email;
-late String password;
-
 class BottomBorderfield extends StatelessWidget {
+  late Function onChanged;
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -43,7 +41,7 @@ class BottomBorderfield extends StatelessWidget {
                     ),
                   ),
                   onChanged: (value) {
-                    email = value;
+                    // email = value;
                   },
                 ),
                 SizedBox(
@@ -72,7 +70,7 @@ class BottomBorderfield extends StatelessWidget {
                     ),
                   ),
                   onChanged: (value) {
-                    password = value;
+                    // password = value;
                   },
                 ),
               ],
@@ -87,10 +85,14 @@ class BottomBorderfield extends StatelessWidget {
 class BorderField extends StatelessWidget {
   final String fieldTitle;
   final String? fieldHint;
-  const BorderField({
+
+  final Function onChanged;
+
+  BorderField({
     Key? key,
     required this.fieldTitle,
     this.fieldHint,
+    required this.onChanged,
   }) : super(key: key);
 
   @override
@@ -138,9 +140,7 @@ class BorderField extends StatelessWidget {
               //
               hintText: fieldHint,
             ),
-            onChanged: (value) {
-              email = value;
-            },
+            onChanged: (value) => onChanged,
           ),
         ),
       ],

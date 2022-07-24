@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:my_report/screens/sign_in_screen.dart';
 import 'screens/forgetpasswoed_screen.dart';
+import 'screens/home_screen.dart';
 import 'screens/sign_up_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
         SignInScreen.screenRoute: (ctx) => SignInScreen(),
         SignUpScreen.screenRoute: (ctx) => SignUpScreen(),
         ForgetPasswordScreen.screenRoute: (ctx) => ForgetPasswordScreen(),
+        HomeScreen.screenRoute: (ctx) => HomeScreen(),
       },
     );
   }

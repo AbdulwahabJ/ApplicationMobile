@@ -60,13 +60,18 @@ class ForgetPasswordScreen extends StatelessWidget {
               BorderField(
                 fieldTitle: 'الايميل',
                 fieldHint: 'اكتب الايميل لارسال الرابط',
+                onChanged: () {},
               ),
               //
               SizedBox(
                 height: 80,
               ),
               //
-              Center(child: Button(buttonText: 'ارسال', onPressed: () {  },)),
+              Center(
+                  child: Button(
+                buttonText: 'ارسال',
+                onPressed: () {},
+              )),
             ],
           ),
         ),
