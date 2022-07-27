@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, empty_catches, unused_local_variable, use_build_context_synchronously, avoid_print
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, empty_catches, unused_local_variable, use_build_context_synchronously, avoid_print, must_be_immutable
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/src/foundation/key.dart';
@@ -9,14 +9,14 @@ import '../Widgets.dart/app_icons.dart';
 import '../Widgets.dart/buttons.dart';
 import '../Widgets.dart/fields.dart';
 import '../Widgets.dart/texts.dart';
-import 'forgetpasswoed_screen.dart';
 import 'home_screen.dart';
 
 class SignUpScreen extends StatelessWidget {
   static const screenRoute = '/signup_screen';
+  SignUpScreen({Key? key}) : super(key: key);
+
   final _auth = FirebaseAuth.instance;
 
-  SignUpScreen({Key? key}) : super(key: key);
   late String name;
   late String email;
   late String password;
@@ -176,6 +176,8 @@ class SignUpScreen extends StatelessWidget {
                   ),
                 ),
                 onPressed: () async {
+                  print(email);
+                  print(password);
                   try {
                     final newUser = await _auth.createUserWithEmailAndPassword(
                         email: email, password: password);

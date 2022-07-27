@@ -40,8 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+  Widget build(BuildContext context) => Scaffold(
       backgroundColor: Color(0xff3D4A53),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -59,4 +58,4 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-}
+

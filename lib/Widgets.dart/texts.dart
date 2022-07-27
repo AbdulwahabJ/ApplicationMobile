@@ -13,16 +13,22 @@ class LanguageText extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.end, //.........
       children: [
-        TextButton(
-          style: TextButton.styleFrom(
-            primary: Colors.white,
-            textStyle: const TextStyle(
-              fontSize: 17,
-            ),
-            // backgroundColor: Colors.white,
+        Padding(
+          padding: const EdgeInsets.only(
+            top: 20,
+            left: 10,
           ),
-          onPressed: () {},
-          child: const Text('EN'),
+          child: TextButton(
+            style: TextButton.styleFrom(
+              primary: Colors.white,
+              textStyle: const TextStyle(
+                fontSize: 20,
+              ),
+              // backgroundColor: Colors.white,
+            ),
+            onPressed: () {},
+            child: const Text('EN'),
+          ),
         ),
       ],
     );
@@ -44,7 +50,7 @@ class LogInText extends StatelessWidget {
             title,
             style: const TextStyle(
               color: Colors.white,
-              fontSize: (23),
+              fontSize: (20),
               fontFamily: 'cairo',
               fontWeight: FontWeight.bold,
             ),
@@ -64,13 +70,14 @@ class ForgetPasswordText extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 8.0, left: 50.0),
+          padding: const EdgeInsets.only(left: 60.0),
           child: TextButton(
             style: TextButton.styleFrom(
               primary: Colors.white,
               textStyle: const TextStyle(
                 fontSize: 13,
                 fontFamily: 'cairo',
+                fontWeight: FontWeight.bold,
               ),
               // backgroundColor: Colors.white,
             ),
@@ -97,7 +104,7 @@ class NewAccountText extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 30.0),
+          padding: const EdgeInsets.only(top: 10.0),
           child: TextButton(
             style: TextButton.styleFrom(
               primary: Colors.white,

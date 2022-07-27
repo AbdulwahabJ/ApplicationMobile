@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:my_report/screens/sign_in_screen.dart';
+import 'package:provider/provider.dart';
+import 'provider/google_signin.dart';
 import 'screens/forgetpasswoed_screen.dart';
 import 'screens/home_screen.dart';
 import 'screens/sign_up_screen.dart';
@@ -19,28 +21,29 @@ class MyApp extends StatelessWidget {
 
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
+  Widget build(BuildContext context) => ChangeNotifierProvider(
+        create: (context) => GoogleSignInProvider(),
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
 
-      localizationsDelegates: [
-        GlobalCupertinoLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ],
-      supportedLocales: [
-        Locale("fa", "IR"),
-        Locale('ar', 'AE'),
-      ],
-      // home: ForgetPasswordScreen(),
-      initialRoute: '/',
-      routes: {
-        '/': (ctx) => SignInScreen(),
-        SignInScreen.screenRoute: (ctx) => SignInScreen(),
-        SignUpScreen.screenRoute: (ctx) => SignUpScreen(),
-        ForgetPasswordScreen.screenRoute: (ctx) => ForgetPasswordScreen(),
-        HomeScreen.screenRoute: (ctx) => HomeScreen(),
-      },
-    );
-  }
+          localizationsDelegates: [
+            GlobalCupertinoLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+          ],
+          supportedLocales: [
+            Locale("fa", "IR"),
+            Locale('ar', 'AE'),
+          ],
+          // home: ForgetPasswordScreen(),
+          initialRoute: '/',
+          routes: {
+            '/': (ctx) => SignInScreen(),
+            SignInScreen.screenRoute: (ctx) => SignInScreen(),
+            SignUpScreen.screenRoute: (ctx) => SignUpScreen(),
+            ForgetPasswordScreen.screenRoute: (ctx) => ForgetPasswordScreen(),
+            HomeScreen.screenRoute: (ctx) => HomeScreen(),
+          },
+        ),
+      );
 }
