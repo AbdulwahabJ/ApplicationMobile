@@ -7,6 +7,8 @@ import '../Widgets.dart/app_icons.dart';
 
 class BottomBorderfield extends StatelessWidget {
   late Function onChanged;
+  // late String email;
+  // late String password;
 
   @override
   Widget build(BuildContext context) {

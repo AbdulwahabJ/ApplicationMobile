@@ -1,15 +1,12 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, empty_catches, unused_local_variable, use_build_context_synchronously, avoid_print, must_be_immutable
 
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
-
+import 'package:my_report/screens/sign_in_screen.dart';
 import '../Widgets.dart/app_icons.dart';
-import '../Widgets.dart/buttons.dart';
 import '../Widgets.dart/fields.dart';
 import '../Widgets.dart/texts.dart';
-import 'home_screen.dart';
+import '../securty/encrypt.dart';
 
 class SignUpScreen extends StatelessWidget {
   static const screenRoute = '/signup_screen';
@@ -20,6 +17,10 @@ class SignUpScreen extends StatelessWidget {
   late String name;
   late String email;
   late String password;
+  //
+  TextEditingController controller = TextEditingController();
+  //
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,14 +33,14 @@ class SignUpScreen extends StatelessWidget {
             BackIcon(),
             //
             LogInText(title: 'حساب جديد'),
-//
+            //
             BorderField(
                 fieldTitle: 'الاسم',
                 fieldHint: 'اكتب الاسم',
                 onChanged: (value) {
                   name = value;
                 }),
-//
+            //
             Padding(
               padding: const EdgeInsets.only(
                 right: 25.0,
@@ -103,6 +104,9 @@ class SignUpScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: TextField(
+                //
+                controller: controller,
+
                 //
                 keyboardType: TextInputType.emailAddress,
                 //
@@ -176,12 +180,15 @@ class SignUpScreen extends StatelessWidget {
                   ),
                 ),
                 onPressed: () async {
-                  print(email);
-                  print(password);
+                  print('<<< password befor Encryption >>> $password');
+                  //
+                  //encrypt password befor saved in database
+                  password = EncryptionDecryption.encryption(controller.text)
+                      .toString();
                   try {
                     final newUser = await _auth.createUserWithEmailAndPassword(
                         email: email, password: password);
-                    Navigator.pushNamed(context, HomeScreen.screenRoute);
+                    // Navigator.pushNamed(context, SignInScreen.screenRoute);
                   } catch (e) {
                     print(e);
                   }
